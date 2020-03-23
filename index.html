@@ -17,17 +17,27 @@
  
 function authenticate(){
 	
-
-	
-	console.log("inside");
-	
-	
 	
 	window.lpGetAuthenticationToken = function(callback) {
 		console.log("inside lpGetAuthenticationToken!");
 		var token = "edna_human";
-    callback(token);
+		callback(token);
 	};
+
+	
+	setTimeout(function(){
+		console.log("inside2");
+		var CurrentLocation = window.location.href;
+		lpTag.newPage(CurrentLocation, {section: "costacrociere"});
+		lpTag.sdes.push({
+			"type": "ctmrinfo",
+			"info": {
+				customerId: '1'
+			}
+		});
+	 
+		
+	}, 3000);
 	
 
 	
@@ -43,12 +53,7 @@ window.onload = function() {
 	
 	setTimeout(function(){
 		
-		lpTag.sdes.push({
-			"type": "ctmrinfo",
-			"info": {
-				customerId: '1'
-			}
-		});
+
 
 	    authenticate();
 		console.log("authentication");
