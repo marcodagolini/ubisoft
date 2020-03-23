@@ -22,12 +22,7 @@ function authenticate(){
 	
 	console.log("inside");
 	
-	lpTag.sdes.push({
-			"type": "ctmrinfo",
-			"info": {
-				customerId: '1'
-			}
-		});
+	
 	
 	window.lpGetAuthenticationToken = function(callback) {
 		console.log("inside lpGetAuthenticationToken!");
@@ -43,6 +38,14 @@ function authenticate(){
 	 
 	 
 window.onload = function() {
+	
+	
+	lpTag.sdes.push({
+			"type": "ctmrinfo",
+			"info": {
+				customerId: '1'
+			}
+		});
 	
 	setTimeout(function(){
 
