@@ -40,14 +40,16 @@ function authenticate(){
 window.onload = function() {
 	
 	
-	lpTag.sdes.push({
+	
+	
+	setTimeout(function(){
+		
+		lpTag.sdes.push({
 			"type": "ctmrinfo",
 			"info": {
 				customerId: '1'
 			}
 		});
-	
-	setTimeout(function(){
 
 	    authenticate();
 		console.log("authentication");
